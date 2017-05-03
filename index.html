@@ -118,20 +118,9 @@
 			</p>
 			<p class="lead">
 				<span>
-                STRESS (<b>S</b>earch <b>T</b>ext <b>RE</b>levance <b>S</b>core
-                <b>S</b>ide-channel) exposes private data via a logical side
-                channel in implementations of full-text search indexes of
-                modern multi-tenant services.  The STRESS attack in some cases 
-                allow an attacker to discover the terms in other tenants’ documents or determine the
-                number of documents (belonging to other tenants) that contain a
-                term of interest. One can leverage the STRESS attack to learn
-                sensitive information such as credit card numbers and social
-                security numbers contained in other tenants’ documents with low
-                false-positive rates. The attacker does not  need special
-                privileges -- Any legitimate user of a vulnerable
-                search service could exploit STRESS. See our 
-                <a href="paper/sp17stress.pdf" target="_blank" >paper</a> for more details.
-
+                The STRESS (<b>S</b>earch <b>T</b>ext <b>RE</b>levance <b>S</b>core
+                <b>S</b>ide-channel) attack can in certain situations expose private data via a logical side channel in the implementations of some full-text search indexes as used by modern multi-tenant cloud services. The STRESS attack allows an attacker to discover whether a term exists in some other tenants' documents or determine the number of documents (belonging to other tenants) that contain a term of interest. We have shown simple experiments that suggest an attacker can leverage the STRESS attack to learn sensitive information such as credit card numbers and social security numbers contained in other tenants' documents, with low false-positive rates. The attacker does not need special privileges -- Any legitimate user of a vulnerable search service could exploit STRESS. See our 
+                <a href="paper/sp17stress.pdf" target="_blank" >paper</a> for more details. 
 				</span>
 			</p>
 
@@ -199,7 +188,8 @@
 				</h1>
 			</div>
 			<p class="lead">
-				We disclosed via email to the three services investigated. In their response to our email, Elastic.co suggests several countermeasures: 
+				We disclosed via email to the three services investigated. Xen.do immediately removed relevance scores from API responses
+				as a preliminary mitigation. Github forwarded the issue to Elastic.co. In their response to our email, Elastic.co suggests several countermeasures: 
 				<table class="table" style="font-family: 'Lato', sans-serif">
 					  <thead class="thead-default">
 					    <tr>
