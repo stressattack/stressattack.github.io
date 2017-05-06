@@ -177,7 +177,7 @@
 
 			</p>
 			<p class="lead">
-			In principle, any services or applications built atop those vulnerable systems/services could be vulnerable to the STRESS attack if they are using shared indexes. We find three services against which the STRESS attack are effective. The services are: <a href="https://github.com/" target="_blank">Github</a>, <a href="https://www.appwise.com/" target="_blank">Xen.do</a> and <strike>Orchestrate.io</strike> (shut down on March 17th, 2017).	
+			In principle, any services or applications built atop those vulnerable systems/services could be vulnerable to the STRESS attack if they are using shared indexes. During our experiments, we found three services which were susceptible to the STRESS attack: <a href="https://github.com/" target="_blank">Github</a>, <a href="https://www.appwise.com/" target="_blank">Xen.do</a>(mitigated based on feedback from researchers and is not vulnerable to the STRESS attack at this time) and <strike>Orchestrate.io</strike> (shut down on March 17th, 2017)".
 			<div id="res">
 			</div>
 
@@ -189,7 +189,8 @@
 			</div>
 			<p class="lead">
 				We disclosed via email to the three services investigated. Xen.do immediately removed relevance scores from API responses
-				as a preliminary mitigation. Github forwarded the issue to Elastic.co. In their response to our email, Elastic.co suggests several countermeasures: 
+				as a preliminary mitigation. Github forwarded the issue to Elastic.co. 
+				In their response to our email, Elastic.co suggests several countermeasures: 
 				<table class="table" style="font-family: 'Lato', sans-serif">
 					  <thead class="thead-default">
 					    <tr>
